@@ -23,7 +23,7 @@ function Rock(descr) {
       
     // Default sprite and scale, if not otherwise specified
     this.sprite = this.sprite || g_sprites.rock;
-    this.scale  = this.scale  || 1;
+    this.scale  = this.scale  || 2;
 
 /*
     // Diagnostics to check inheritance stuff

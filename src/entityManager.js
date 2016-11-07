@@ -164,6 +164,12 @@ toggleRocks: function() {
     this._bShowRocks = !this._bShowRocks;
 },
 
+shootLocation: function(x,y) {
+    for( var i = 0 ; i < this._ducks.length ; i++){
+		this.ducks[i].scanForHit(x,y);
+	}
+},
+
 update: function(du) {
     for (var c = 0; c < this._categories.length; ++c) {
 
