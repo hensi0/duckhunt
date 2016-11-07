@@ -52,7 +52,6 @@ function createInitialShips() {
         cx : 200,
         cy : 200
     });
-    
 }
 
 // =============
@@ -161,7 +160,11 @@ function processDiagnostics() {
 // GAME-SPECIFIC RENDERING
 
 function renderSimulation(ctx) {
-
+	
+	g_sprites.BG.drawCentredAt(
+        ctx, 300, 300, 0
+	);
+	
     entityManager.render(ctx);
 
     if (g_renderSpatialDebug) spatialManager.render(ctx);
@@ -177,9 +180,12 @@ var g_images = {};
 function requestPreloads() {
 
     var requiredImages = {
-        ship   : "https://notendur.hi.is/~pk/308G/images/ship.png",
-        ship2  : "https://notendur.hi.is/~pk/308G/images/ship_2.png",
-        rock   : "https://notendur.hi.is/~pk/308G/images/rock.png"
+        ship   	: "https://notendur.hi.is/~pk/308G/images/ship.png",
+        ship2  	: "https://notendur.hi.is/~pk/308G/images/ship_2.png",
+        rock   	: "https://notendur.hi.is/~pk/308G/images/rock.png",
+		gun   	: "res/images/gun.png",
+		cross   : "res/images/cross.png",
+		BG   	: "res/images/BG.png"
     };
 
     imagesPreload(requiredImages, g_images, preloadDone);
@@ -192,7 +198,10 @@ function preloadDone() {
     g_sprites.ship  = new Sprite(g_images.ship);
     g_sprites.ship2 = new Sprite(g_images.ship2);
     g_sprites.rock  = new Sprite(g_images.rock);
-
+	g_sprites.gun  = new Sprite(g_images.gun);
+	g_sprites.cross  = new Sprite(g_images.cross);
+	g_sprites.BG  = new Sprite(g_images.BG);
+	
     g_sprites.bullet = new Sprite(g_images.ship);
     g_sprites.bullet.scale = 0.25;
 
@@ -201,6 +210,7 @@ function preloadDone() {
 
     main.init();
 }
+
 
 // Kick it off
 requestPreloads();

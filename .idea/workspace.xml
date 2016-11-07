@@ -23,8 +23,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Duck.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Duck.js">
+      <file leaf-file-name="duck.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/duck.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
               <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
@@ -48,11 +48,21 @@
       <file leaf-file-name="entityManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entityManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1772">
-              <caret line="179" column="32" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DuckHunt.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DuckHunt.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,9 +87,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/Entity.js" />
         <option value="$PROJECT_DIR$/src/duck.js" />
-        <option value="$PROJECT_DIR$/src/entityManager.js" />
         <option value="$PROJECT_DIR$/src/Rock.js" />
         <option value="$PROJECT_DIR$/src/Duck.js" />
+        <option value="$PROJECT_DIR$/src/entityManager.js" />
+        <option value="$PROJECT_DIR$/DuckHunt.html" />
       </list>
     </option>
   </component>
@@ -223,12 +234,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478538860152</updated>
-      <workItem from="1478538862549" duration="5987000" />
+      <workItem from="1478538862549" duration="6255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5987000" />
+    <option name="totallyTimeSpent" value="6255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -268,14 +279,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DuckHunt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DuckHunt.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1233">
@@ -291,16 +294,6 @@
         <state relative-caret-position="-24">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entityManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1772">
-          <caret line="179" column="32" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -320,13 +313,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Duck.js">
+    <entry file="file://$PROJECT_DIR$/src/duck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entityManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DuckHunt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

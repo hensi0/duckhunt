@@ -27,6 +27,7 @@ var entityManager = {
 
 // "PRIVATE" DATA
 _ducks   : [],
+_gun   : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
@@ -46,11 +47,17 @@ _generateRocks : function() {
 
 _generateDucks : function() {
     var i,
-        NUM_DUCKS = 4;
+        NUM_DUCKS = 1;
 
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
     }
+},
+
+
+_generateGun : function(descr) {
+    console.log("generating the gun")
+    this._gun.push(new Gun(descr));
 },
 
 _findNearestShip : function(posX, posY) {
@@ -96,12 +103,13 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._gun];
 },
 
 init: function() {
 	console.log("init EM");
     this._generateDucks();
+	this._generateGun();
     //this._generateShip();
 },
 
