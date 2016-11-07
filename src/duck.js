@@ -73,6 +73,10 @@ Duck.prototype.update = function (du) {
         this.velX *= -1;
     }
 
+    if(this.cy<0){
+        this._isDeadNow = true;
+    }
+
     if(this._isDeadNow) return entityManager.KILL_ME_NOW;
 
 	this.cx += this.velX;
