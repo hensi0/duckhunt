@@ -44,25 +44,46 @@ Duck.prototype.velX = 0;
 Duck.prototype.velY = 0;
 Duck.prototype.launchVel = 2;
 Duck.prototype.numSubSteps = 1;
+Duck.prototype.flightTimer = 100;
 
 // HACKED-IN AUDIO (no preloading)
 //Duck.prototype.warpSound = new Audio("sounds/DuckWarp.ogg");
 
 Duck.prototype.spawn = function () {
-	var side = 1 - (Math.floor(0.5 + Math.random())*2);
-	this.cx = 300 + side*350;
-	this.cy = 100 + Math.random()*450;
-	this.velY = Math.random() - 0.5;
-	this.velX = (-side*Math.random() + -side*1);
+	var side = 1 - (Math.floor(0.5 + 1)*2);
+	this.cx = 300 + side*100;
+	this.cy = 600 + Math.random()* 50;
+	this.velY = Math.random() *- 0.5 - 2;
+	this.velX = (-side*Math.random() - side);
+};
+
+Duck.prototype.randomiseVelocity = function () {
+    var MIN_SPEED = 20,
+        MAX_SPEED = 100;
+
+    var speed = util.randRange(MIN_SPEED, MAX_SPEED) / SECS_TO_NOMINALS;
+    var dirn = Math.random() * consts.FULL_CIRCLE;
 };
 
     
 Duck.prototype.update = function (du) {
 
-    if(Math.abs(this.cy - this.reset_cy) > 50) this.velY *= -1;
+    //if(Math.abs(this.cy - this.reset_cy) > 50) this.velY *= -1;
+    if(this.cx<0||this.cx>canvas.width){
+        this.velX *= -1;
+    }
+
+    if(this._isDeadNow) return entityManager.KILL_ME_NOW;
+
 	this.cx += this.velX;
 	this.cy += this.velY;
-	
+
+    this.flightTimer-=du;
+    if(this.flightTimer<0){
+        this.flightTimer = 1000;
+        this.randomiseFlight();
+    }
+
 };
 
 
@@ -91,8 +112,15 @@ Duck.prototype.render = function (ctx) {
     var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this._scale;
-    this.sprite.drawWrappedCentredAt(
+    this.sprite.drawCentredAt(
 	ctx, this.cx, this.cy, this.rotation
     );
     this.sprite.scale = origScale;
+};
+
+Duck.prototype.randomiseFlight = function () {
+    var side = 1 - (Math.floor(0.5 + Math.random())*2);
+
+    this.velY = Math.random()*-1;
+    this.velX = (-side*Math.random() - side);
 };

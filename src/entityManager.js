@@ -177,7 +177,7 @@ update: function(du) {
         }
     }
     
-    //if (this._rocks.length === 0) this._generateRocks();
+    if (this._ducks.length === 0) this._generateDucks();
 
 },
 
