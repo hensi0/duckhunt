@@ -50,11 +50,11 @@ Duck.prototype.flightTimer = 100;
 //Duck.prototype.warpSound = new Audio("sounds/DuckWarp.ogg");
 
 Duck.prototype.spawn = function () {
-	var side = 1 - (Math.floor(0.5 + 1)*2);
-	this.cx = 300 + side*100;
+	var side = 1 - (Math.random()*Math.floor(0.5 + 1));
+	this.cx = Math.random()*600;
 	this.cy = 600 + Math.random()* 50;
 	this.velY = Math.random() *- 0.5 - 2;
-	this.velX = (-side*Math.random() - side);
+	this.velX = (-side*Math.random() - side)*2;
 };
 
 Duck.prototype.randomiseVelocity = function () {
