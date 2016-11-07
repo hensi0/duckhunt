@@ -47,7 +47,7 @@ _generateRocks : function() {
 
 _generateDucks : function() {
     var i,
-        NUM_DUCKS = 1;
+        NUM_DUCKS = Math.round(Math.random()*3);
 
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
@@ -185,7 +185,7 @@ update: function(du) {
         }
     }
     
-    if (this._ducks.length === 0) this._generateDucks();
+    if (this._ducks.length == 0) this._generateDucks();
 
 },
 
