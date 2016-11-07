@@ -92,15 +92,17 @@ Duck.prototype.update = function (du) {
 
 
 Duck.prototype.scanForHit = function (x,y) {
-    if(Math.abs(this.cx - x) <  this.getRadius() &&  Math.abs(this.cy - y) <  this.getRadius())
+    if(Math.abs(this.cx - x) <  this.getRadius() &&  Math.abs(this.cy - y) <  this.getRadius()){
 		this.takeBulletHit();
+		return true;
+	} else return false;
 };
 
 
 
 
 Duck.prototype.getRadius = function () {
-    return (this.sprite.width) * 0.9;
+    return (this.sprite.width)/2 * 0.8;
 };
 
 Duck.prototype.takeBulletHit = function () {
