@@ -40,7 +40,7 @@ Entity.prototype.setup = function (descr) {
     }
     
     // Get my (unique) spatial ID
-    this._spatialID = spatialManager.getNewSpatialID();
+    //this._spatialID = spatialManager.getNewSpatialID();
 	
     // I am not dead yet!
     this._isDeadNow = false;

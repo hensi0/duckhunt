@@ -26,7 +26,7 @@ with suitable 'data' and 'methods'.
 var entityManager = {
 
 // "PRIVATE" DATA
-
+_ducks   : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
@@ -41,6 +41,15 @@ _generateRocks : function() {
 
     for (i = 0; i < NUM_ROCKS; ++i) {
         this.generateRock();
+    }
+},
+
+_generateDucks : function() {
+    var i,
+        NUM_DUCKS = 4;
+
+    for (i = 0; i < NUM_DUCKS; ++i) {
+        this.generateDuck();
     }
 },
 
@@ -87,11 +96,12 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks];
 },
 
 init: function() {
-    this._generateRocks();
+	console.log("init EM");
+    this._generateDucks();
     //this._generateShip();
 },
 
@@ -106,12 +116,18 @@ fireBullet: function(cx, cy, velX, velY, rotation) {
     }));
 },
 
+
+generateDuck : function(descr) {
+	console.log("generating duck")
+    this._ducks.push(new Duck(descr));
+},
+
 generateRock : function(descr) {
-    this._rocks.push(new Rock(descr));
+    //this._ducks.push(new Duck(descr));
 },
 
 generateShip : function(descr) {
-    this._ships.push(new Ship(descr));
+    //this._ships.push(new Ship(descr));
 },
 
 killNearestShip : function(xPos, yPos) {
@@ -141,7 +157,6 @@ toggleRocks: function() {
 },
 
 update: function(du) {
-
     for (var c = 0; c < this._categories.length; ++c) {
 
         var aCategory = this._categories[c];
@@ -162,7 +177,7 @@ update: function(du) {
         }
     }
     
-    if (this._rocks.length === 0) this._generateRocks();
+    //if (this._rocks.length === 0) this._generateRocks();
 
 },
 
