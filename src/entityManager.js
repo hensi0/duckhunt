@@ -166,7 +166,7 @@ toggleRocks: function() {
 
 shootLocation: function(x,y) {
     for( var i = 0 ; i < this._ducks.length ; i++){
-		this.ducks[i].scanForHit(x,y);
+		this._ducks[i].scanForHit(x,y);
 	}
 },
 

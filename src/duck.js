@@ -91,15 +91,20 @@ Duck.prototype.update = function (du) {
 };
 
 
+Duck.prototype.scanForHit = function (x,y) {
+    if(Math.abs(this.cx - x) <  this.getRadius() &&  Math.abs(this.cy - y) <  this.getRadius())
+		this.takeBulletHit();
+};
+
 
 
 
 Duck.prototype.getRadius = function () {
-    return (this.sprite.width / 2) * 0.9;
+    return (this.sprite.width) * 0.9;
 };
 
 Duck.prototype.takeBulletHit = function () {
-    this.warp();
+    this._isDeadNow = true;
 };
 
 Duck.prototype.reset = function () {

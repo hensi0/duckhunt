@@ -37,7 +37,9 @@ Gun.prototype.spriteCross;
 
 //shoots tho gun 
 Gun.prototype.shoot = function (x,y) {
-    console.log("boom boom á (x,y): (" + x + "," + y + ")");
+    //console.log("boom boom á (x,y): (" + x + "," + y + ")");
+	if(y < 400)
+		entityManager.shootLocation(x,y);
 };
 
 

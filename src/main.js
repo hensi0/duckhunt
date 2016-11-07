@@ -145,6 +145,7 @@ document.exitPointerLock = document.exitPointerLock ||
 
 canvas.onclick = function() {
   canvas.requestPointerLock();
+  entityManager._gun[0].shoot(g_mouseX2, g_mouseY2);
 };
 
 // pointer lock event listeners
@@ -156,12 +157,10 @@ document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
 function lockChangeAlert() {
   if (document.pointerLockElement === canvas ||
       document.mozPointerLockElement === canvas) {
-    console.log('The pointer lock status is now locked');
-	g_mouseLocked = true;
+    g_mouseLocked = true;
     document.addEventListener("mousemove", updatePosition, false);
   } else {
-    console.log('The pointer lock status is now unlocked');  
-	g_mouseLocked = true;
+    g_mouseLocked = true;
     document.removeEventListener("mousemove", updatePosition, false);
   }
 }
