@@ -52,7 +52,6 @@ function createInitialShips() {
         cx : 200,
         cy : 200
     });
-    
 }
 
 // =============
@@ -211,6 +210,7 @@ function preloadDone() {
 
     main.init();
 }
+
 
 // Kick it off
 requestPreloads();

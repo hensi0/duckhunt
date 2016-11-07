@@ -132,3 +132,59 @@ main.init = function () {
 
     this._requestNextIteration();
 };
+
+var g_mouseLocked = false;
+
+// pointer lock object forking for cross browser
+
+canvas.requestPointerLock = canvas.requestPointerLock ||
+                            canvas.mozRequestPointerLock;
+
+document.exitPointerLock = document.exitPointerLock ||
+                           document.mozExitPointerLock;
+
+canvas.onclick = function() {
+  canvas.requestPointerLock();
+};
+
+// pointer lock event listeners
+
+// Hook pointer lock state change events for different browsers
+document.addEventListener('pointerlockchange', lockChangeAlert, false);
+document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
+
+function lockChangeAlert() {
+  if (document.pointerLockElement === canvas ||
+      document.mozPointerLockElement === canvas) {
+    console.log('The pointer lock status is now locked');
+	g_mouseLocked = true;
+    document.addEventListener("mousemove", updatePosition, false);
+  } else {
+    console.log('The pointer lock status is now unlocked');  
+	g_mouseLocked = true;
+    document.removeEventListener("mousemove", updatePosition, false);
+  }
+}
+
+var g_mouseX2 = 0;
+var g_mouseY2 = 0;
+
+function updatePosition(e) {
+  var RADIUS = 20;
+  
+  g_mouseX2 += e.movementX/2;
+  g_mouseY2 += e.movementY/2;
+  
+  if (g_mouseX2 > canvas.width + RADIUS) {
+    g_mouseX2 = -RADIUS;
+  }
+  if (g_mouseY2 > canvas.height + RADIUS) {
+    g_mouseY2 = -RADIUS;
+  }  
+  if (g_mouseX2 < -RADIUS) {
+    g_mouseX2 = canvas.width + RADIUS;
+  }
+  if (g_mouseY2 < -RADIUS) {
+    g_mouseY2 = canvas.height + RADIUS;
+  }
+}

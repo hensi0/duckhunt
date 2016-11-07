@@ -63,12 +63,25 @@ Gun.prototype.render = function (ctx) {
     var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this.scale;
-	if(g_mouseY < 400)
+	var X;
+	var Y;
+	if(g_mouseLocked){
+		X = g_mouseX2;
+		Y = g_mouseY2;
+	} else {
+		X = g_mouseX;
+		Y = g_mouseY;
+	}
+	if(Y < 400)
 		this.spriteCross.drawCentredAt(
-			ctx, g_mouseX, g_mouseY, 0
+			ctx, X, Y, 0
 		);
-	
-	this.rotation = -Math.atan((600-g_mouseY)/g_mouseX) + 110/180;
+	else
+		ctx.fillRect(
+			 X-5, Y-5, 10, 10
+		);
+		
+	this.rotation = -Math.atan((600-Y)/X) + 110/180;
 	if(this.rotation < -1) this.rotation = -1;
 	if(this.rotation > 0.2) this.rotation = 0.2;
 	
