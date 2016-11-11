@@ -38,7 +38,6 @@ _level : 1,
 _ducksKilled : 0,
 _spawnTimer : 0,
 _playerLives : 5,
-_score: 0,
 _yolo: false,
 
 // "PRIVATE" METHODS
