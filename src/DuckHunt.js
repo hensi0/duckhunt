@@ -185,7 +185,8 @@ function requestPreloads() {
         rock   	: "res/images/bird.png",
 		gun   	: "res/images/gun.png",
 		cross   : "res/images/cross.png",
-		BG   	: "res/images/BG.png"
+		BG   	: "res/images/BG.png",
+		scorebox: "res/images/scorebox.png"
     };
 
     imagesPreload(requiredImages, g_images, preloadDone);
@@ -201,6 +202,7 @@ function preloadDone() {
 	g_sprites.gun  = new Sprite(g_images.gun);
 	g_sprites.cross  = new Sprite(g_images.cross);
 	g_sprites.BG  = new Sprite(g_images.BG);
+	g_sprites.scorebox  = new Sprite(g_images.scorebox);
 	
     g_sprites.bullet = new Sprite(g_images.ship);
     g_sprites.bullet.scale = 0.25;
