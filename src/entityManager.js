@@ -27,24 +27,22 @@ var entityManager = {
 
 // "PRIVATE" DATA
 _ducks   : [],
-_gun   : [],
+_gun : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
 _score	 : [],
 
 _bShowRocks : true,
+_level : 1,
+_ducksKilled : 0,
+_spawnTimer : 0,
+_playerLives : 5,
+_score: 0,
+_yolo: false,
 
 // "PRIVATE" METHODS
 
-_generateRocks : function() {
-    var i,
-        NUM_ROCKS = 4;
-
-    for (i = 0; i < NUM_ROCKS; ++i) {
-        this.generateRock();
-    }
-},
 
 _generateDucks : function() {
     var i,
@@ -53,6 +51,11 @@ _generateDucks : function() {
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
     }
+},
+
+_duckEscape : function() {
+    this._playerLives--;
+    if(this.playerLives === 0) window.alert("Game over");
 },
 
 
@@ -172,6 +175,10 @@ shootLocation: function(x,y) {
 	}
 },
 
+duckEscape: function() {
+   this._playerLives--;
+},
+
 update: function(du) {
     for (var c = 0; c < this._categories.length; ++c) {
 
@@ -186,20 +193,44 @@ update: function(du) {
                 // remove the dead guy, and shuffle the others down to
                 // prevent a confusing gap from appearing in the array
                 aCategory.splice(i,1);
+                this._ducksKilled++;
+                if(this._ducksKilled === this.level * 10){
+                    this._level++;
+                    this._playerLives++;
+                }
             }
             else {
                 ++i;
             }
+
+        }
+        if(this._playerLives === 0 && _this._yolo === false){
+            this._yolo = true;
+            window.alert("Game over \n Your score:"+" "+this._score);
+            location.reload();
         }
     }
+	
+	this._gun[0].update();
     
-    if (this._ducks.length == 0) this._generateDucks();
+    if (this._ducks.length === 0||this._spawnTimer < 0)
+    {
+        this._generateDucks();
+        this._spawnTimer = 1000-this._level*this._level;
+    }
 
 },
 
 render: function(ctx) {
 
     var debugX = 10, debugY = 100;
+	
+	g_sprites.BG3.drawCentredAt(
+        ctx, 300, 300, 0
+	);
+	g_sprites.BG2.drawCentredAt(
+        ctx, 300, 300, 0
+	);
 
     for (var c = 0; c < this._categories.length; ++c) {
 
@@ -217,6 +248,12 @@ render: function(ctx) {
         }
         debugY += 10;
     }
+	
+	g_sprites.BG1.drawCentredAt(
+        ctx, 300, 300, 0
+	);
+	
+	this._gun[0].render(ctx);
 }
 
 }
