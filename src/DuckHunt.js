@@ -161,12 +161,12 @@ function processDiagnostics() {
 
 function renderSimulation(ctx) {
 	
-	g_sprites.BG.drawCentredAt(
-        ctx, 300, 300, 0
-	);
+
 	
     entityManager.render(ctx);
 
+
+	
     if (g_renderSpatialDebug) spatialManager.render(ctx);
 }
 
@@ -185,11 +185,24 @@ function requestPreloads() {
         rock   	: "res/images/bird.png",
 		gun   	: "res/images/gun.png",
 		cross   : "res/images/cross.png",
-		BG   	: "res/images/BG.png"
+		BG   	: "res/images/BG.png",
+		BG1   	: "res/images/BG1.png",
+		BG2  	: "res/images/BG2.png",
+		BG3   	: "res/images/BG3.png"
+		
     };
 
     imagesPreload(requiredImages, g_images, preloadDone);
 }
+
+function makeBirdAnimation(scale) {
+    var bird = {};
+	//animation variables:  (image, y-startlocation, height, width, numberOfFrames, time between frames, scale)
+    bird.animation = new Animation(g_images.BG,0,50,50,10,300, scale);
+	
+    return bird;
+};
+
 
 var g_sprites = {};
 
@@ -201,6 +214,9 @@ function preloadDone() {
 	g_sprites.gun  = new Sprite(g_images.gun);
 	g_sprites.cross  = new Sprite(g_images.cross);
 	g_sprites.BG  = new Sprite(g_images.BG);
+	g_sprites.BG1  = new Sprite(g_images.BG1);
+	g_sprites.BG2  = new Sprite(g_images.BG2);
+	g_sprites.BG3  = new Sprite(g_images.BG3);
 	
     g_sprites.bullet = new Sprite(g_images.ship);
     g_sprites.bullet.scale = 0.25;

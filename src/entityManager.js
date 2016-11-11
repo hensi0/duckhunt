@@ -27,7 +27,7 @@ var entityManager = {
 
 // "PRIVATE" DATA
 _ducks   : [],
-_gun   : [],
+_gun : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
@@ -105,7 +105,7 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._gun];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks];
 },
 
 init: function() {
@@ -206,6 +206,8 @@ update: function(du) {
             location.reload();
         }
     }
+	
+	this._gun[0].update();
     
     if (this._ducks.length === 0||this._spawnTimer < 0)
     {
@@ -218,6 +220,13 @@ update: function(du) {
 render: function(ctx) {
 
     var debugX = 10, debugY = 100;
+	
+	g_sprites.BG3.drawCentredAt(
+        ctx, 300, 300, 0
+	);
+	g_sprites.BG2.drawCentredAt(
+        ctx, 300, 300, 0
+	);
 
     for (var c = 0; c < this._categories.length; ++c) {
 
@@ -235,6 +244,12 @@ render: function(ctx) {
         }
         debugY += 10;
     }
+	
+	g_sprites.BG1.drawCentredAt(
+        ctx, 300, 300, 0
+	);
+	
+	this._gun[0].render(ctx);
 }
 
 }

@@ -23,6 +23,10 @@ function Duck(descr) {
     // Default sprite, if not otherwise specified
     this.sprite = this.sprite || g_sprites.rock;
     
+	if(typeof makeBirdAnimation == 'function') {
+		this.animations = makeBirdAnimation(this._scale);
+		this.animation = this.animations['animation'];
+	}
     // Set normal drawing scale, and warp state off
     this._scale = 1;
 };
@@ -110,6 +114,8 @@ Duck.prototype.update = function (du) {
         this.flightTimer = 1000+Math.random()*1000;
         this.randomiseFlight();
     }
+	
+	this.animation.update(du);
 
 };
 
@@ -157,14 +163,19 @@ var NOMINAL_ROTATE_RATE = 0.1;
 
 
 Duck.prototype.render = function (ctx) {
-    var origScale = this.sprite.scale;
+    //sprite
+	var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this._scale;
     this.sprite.drawCentredAt(
 	ctx, this.cx, this.cy, this.rotation
     );
     this.sprite.scale = origScale;
+	//animation
+	
+	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
 };
+
 
 Duck.prototype.randomiseFlight = function () {
     var side = 1 - (Math.floor(0.5 + Math.random())*2);
