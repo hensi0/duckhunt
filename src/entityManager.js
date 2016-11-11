@@ -38,6 +38,7 @@ _ducksKilled : 0,
 _spawnTimer : 0,
 _playerLives : 5,
 _score: 0,
+_yolo: false,
 
 // "PRIVATE" METHODS
 
@@ -201,7 +202,8 @@ update: function(du) {
             }
 
         }
-        if(this._playerLives === 0){
+        if(this._playerLives === 0 && _this._yolo === false){
+            this._yolo = true;
             window.alert("Game over \n Your score:"+" "+this._score);
             location.reload();
         }

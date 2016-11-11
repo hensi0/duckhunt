@@ -179,7 +179,11 @@ Duck.prototype.render = function (ctx) {
 
 Duck.prototype.randomiseFlight = function () {
     var side = 1 - (Math.floor(0.5 + Math.random())*2);
-
-    this.velY = Math.random() * -0.5 - 2;
-    this.velX = (-side*Math.random() - side)*2;
+    if(this.type === 'speedy'){
+        this.velY = (Math.random() * -0.5 - 2)*1.5;
+        this.velX = (-side*Math.random() - side)*3;
+    }else{
+        this.velY = Math.random() * -0.5 - 2;
+        this.velX = (-side*Math.random() - side)*2;
+    }
 };
