@@ -31,6 +31,7 @@ _gun : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
+_score	 : [],
 
 _bShowRocks : true,
 _level : 1,
@@ -106,13 +107,14 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._gun, this._score];
 },
 
 init: function() {
 	console.log("init EM");
     this._generateDucks();
 	this._generateGun();
+	this._score.push(new Score());
     //this._generateShip();
 },
 
@@ -202,7 +204,7 @@ update: function(du) {
             }
 
         }
-        if(this._playerLives === 0 && this._yolo === false){
+        if(this._playerLives === 0 && _this._yolo === false){
             this._yolo = true;
             window.alert("Game over \n Your score:"+" "+this._score);
             location.reload();
