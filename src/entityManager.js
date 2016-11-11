@@ -33,17 +33,14 @@ _bullets : [],
 _ships   : [],
 
 _bShowRocks : true,
+_level : 1,
+_ducksKilled : 0,
+_spawnTimer : 0,
+_playerLives : 5,
+_score: 0,
 
 // "PRIVATE" METHODS
 
-_generateRocks : function() {
-    var i,
-        NUM_ROCKS = 4;
-
-    for (i = 0; i < NUM_ROCKS; ++i) {
-        this.generateRock();
-    }
-},
 
 _generateDucks : function() {
     var i,
@@ -52,6 +49,11 @@ _generateDucks : function() {
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
     }
+},
+
+_duckEscape : function() {
+    this._playerLives--;
+    if(this.playerLives === 0) window.alert("Game over");
 },
 
 
@@ -170,6 +172,10 @@ shootLocation: function(x,y) {
 	}
 },
 
+duckEscape: function() {
+   this._playerLives--;
+},
+
 update: function(du) {
     for (var c = 0; c < this._categories.length; ++c) {
 
@@ -184,14 +190,28 @@ update: function(du) {
                 // remove the dead guy, and shuffle the others down to
                 // prevent a confusing gap from appearing in the array
                 aCategory.splice(i,1);
+                this._ducksKilled++;
+                if(this._ducksKilled === this.level * 10){
+                    this._level++;
+                    this._playerLives++;
+                }
             }
             else {
                 ++i;
             }
+
+        }
+        if(this._playerLives === 0){
+            window.alert("Game over \n Your score:"+" "+this._score);
+            location.reload();
         }
     }
     
-    if (this._ducks.length == 0) this._generateDucks();
+    if (this._ducks.length === 0||this._spawnTimer < 0)
+    {
+        this._generateDucks();
+        this._spawnTimer = 1000-this._level*this._level;
+    }
 
 },
 
