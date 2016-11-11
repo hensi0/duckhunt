@@ -62,7 +62,6 @@ Gun.prototype.getRadius = function () {
 
 
 Gun.prototype.render = function (ctx) {
-    console.log(this.sprite);
 	var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this.scale;

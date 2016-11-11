@@ -195,6 +195,15 @@ function requestPreloads() {
     imagesPreload(requiredImages, g_images, preloadDone);
 }
 
+function makeBirdAnimation(scale) {
+    var bird = {};
+	//animation variables:  (image, y-startlocation, height, width, numberOfFrames, time between frames, scale)
+    bird.animation = new Animation(g_images.BG,0,50,50,10,300, scale);
+	
+    return bird;
+};
+
+
 var g_sprites = {};
 
 function preloadDone() {
