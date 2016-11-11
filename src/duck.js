@@ -99,7 +99,7 @@ Duck.prototype.update = function (du) {
         this.velX *= -1;
     }
 
-    if(this.cy+this.height<0){
+    if(this.cy+(this.getRadius()*2)<0){
         entityManager.duckEscape();
         this._isDeadNow = true;
     }
