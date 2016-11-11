@@ -106,7 +106,7 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._gun, this._score];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._gun];
 },
 
 init: function() {
@@ -210,7 +210,8 @@ update: function(du) {
     }
 	
 	this._gun[0].update();
-    
+    this._score[0].update();
+	
     if (this._ducks.length === 0||this._spawnTimer < 0)
     {
         this._generateDucks();
@@ -250,8 +251,8 @@ render: function(ctx) {
 	g_sprites.BG1.drawCentredAt(
         ctx, 300, 300, 0
 	);
-	
 	this._gun[0].render(ctx);
+	this._score[0].render(ctx);
 }
 
 }
