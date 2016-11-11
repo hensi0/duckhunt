@@ -17,7 +17,8 @@ function Duck(descr) {
 
     // Common inherited setup logic from Entity
     this.setup(descr);
-	this.spawn();
+
+	this.spawn(this.bool);
     this.rememberResets();
     
     // Default sprite, if not otherwise specified
@@ -51,21 +52,29 @@ Duck.prototype.numSubSteps = 1;
 Duck.prototype.flightTimer = 100;
 Duck.prototype.lives = 1;
 Duck.prototype.type = 'normal';
+Duck.prototype.bool = false;
+Duck.prototype.spawnTimer = 200;
 
 // HACKED-IN AUDIO (no preloading)
 //Duck.prototype.warpSound = new Audio("sounds/DuckWarp.ogg");
 
-Duck.prototype.spawn = function () {
+Duck.prototype.spawn = function (bool) {
+    this.randType(bool);
+    this.setLives();
 	var side = 1 - (Math.random()*Math.floor(0.5 + 1));
 	this.cx = Math.random()*600;
 	this.cy = 600 + Math.random()* 50;
 	this.velY = Math.random() * -0.5 - 2;
 	this.velX = (-side*Math.random() - side)*2;
     this.speed = 10;
-    this.type = this.randType();
 };
 
-Duck.prototype.randType = function (){
+Duck.prototype.randType = function (bool){
+    if(bool){
+        this.type = 'normal';
+        return;
+    }
+
     var lvl = entityManager._level;
     var typechooser = Math.random();
     if(typechooser<0.5){
@@ -91,6 +100,12 @@ Duck.prototype.randomiseVelocity = function () {
     var dirn = Math.random() * consts.FULL_CIRCLE;
 };
 
+Duck.prototype.giveBirth = function() {
+    var litterSize = Math.floor(Math.random*4);
+    for(var i = 0; i<litterSize; i++){
+        entityManager.generateDuck({cx: this.cx, cy: this.cy, bool: true});
+    }
+};
     
 Duck.prototype.update = function (du) {
 
@@ -111,8 +126,16 @@ Duck.prototype.update = function (du) {
 
     this.flightTimer-=du;
     if(this.flightTimer<0){
-        this.flightTimer = 1000+Math.random()*1000;
+        if(this.type === 'speedySwitch'){
+            this.flightTimer = (100+Math.random()*1000)/2;
+        }else{
+            this.flightTimer = 100+Math.random()*1000;
+        }
         this.randomiseFlight();
+    }
+    if(this.type === 'superPack'){
+        this.spawnTimer-=du;
+        this.spawnTimer = Math.random()*400;
     }
 	
 	this.animation.update(du);
@@ -176,12 +199,29 @@ Duck.prototype.render = function (ctx) {
 	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
 };
 
+Duck.prototype.setLives = function(){
+    var hp = Math.floor(Math.sqrt(entityManager._level));
+    if(this.type === 'heavy'){
+        this.lives = hp * 2;
+    }else if(this.type === 'superPack'){
+        this.lives = hp * 5;
+    }else{
+        this.lives = hp;
+    }
+};
+
 
 Duck.prototype.randomiseFlight = function () {
     var side = 1 - (Math.floor(0.5 + Math.random())*2);
     if(this.type === 'speedy'){
         this.velY = (Math.random() * -0.5 - 2)*1.5;
         this.velX = (-side*Math.random() - side)*3;
+    }else if(this.type === 'superPack'){
+        this.velY = (Math.random() * -0.5 - 2)*0.2;
+        this.velX = ((-side*Math.random() - side)*2)*0.2;
+    }else if(this.type === 'heavy'){
+        this.velY = (Math.random() * -0.5 - 2)*0.9;
+        this.velX = (-side*Math.random() - side)*1.8;
     }else{
         this.velY = Math.random() * -0.5 - 2;
         this.velX = (-side*Math.random() - side)*2;

@@ -202,7 +202,7 @@ update: function(du) {
             }
 
         }
-        if(this._playerLives === 0 && _this._yolo === false){
+        if(this._playerLives === 0 && this._yolo === false){
             this._yolo = true;
             window.alert("Game over \n Your score:"+" "+this._score);
             location.reload();
