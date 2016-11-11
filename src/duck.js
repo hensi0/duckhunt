@@ -60,15 +60,6 @@ Duck.prototype.spawn = function () {
 	this.velY = Math.random() *- 0.5 - 2;
 	this.velX = (-side*Math.random() - side)*2;
 };
-
-Duck.prototype.randomiseVelocity = function () {
-    var MIN_SPEED = 20,
-        MAX_SPEED = 100;
-
-    var speed = util.randRange(MIN_SPEED, MAX_SPEED) / SECS_TO_NOMINALS;
-    var dirn = Math.random() * consts.FULL_CIRCLE;
-};
-
     
 Duck.prototype.update = function (du) {
 
@@ -137,6 +128,7 @@ Duck.prototype.render = function (ctx) {
     this.sprite.scale = origScale;
 	*/
 	//animation
+	
 	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
 };
 
