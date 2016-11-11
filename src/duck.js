@@ -137,6 +137,7 @@ Duck.prototype.getRadius = function () {
 Duck.prototype.takeBulletHit = function () {
     this.lives--;
     if(this.lives === 0) {
+        entityManager._ducksKilled++;
         this._isDeadNow = true;
         if(this.type === 'normal'){
             entityManager._score += 1;

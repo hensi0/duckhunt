@@ -192,7 +192,6 @@ update: function(du) {
                 // remove the dead guy, and shuffle the others down to
                 // prevent a confusing gap from appearing in the array
                 aCategory.splice(i,1);
-                this._ducksKilled++;
                 if(this._ducksKilled === this.level * 10){
                     this._level++;
                     this._playerLives++;
@@ -203,7 +202,7 @@ update: function(du) {
             }
 
         }
-        if(this._playerLives === 0 && _this._yolo === false){
+        if(this._playerLives === 0 && this._yolo === false){
             this._yolo = true;
             window.alert("Game over \n Your score:"+" "+this._score);
             location.reload();

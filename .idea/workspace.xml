@@ -26,8 +26,8 @@
       <file leaf-file-name="duck.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/duck.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="65" column="2" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+            <state relative-caret-position="243">
+              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -45,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entityManager.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="entityManager.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/entityManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
+            <state relative-caret-position="521">
+              <caret line="204" column="38" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -67,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DuckHunt.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DuckHunt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DuckHunt.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
@@ -101,9 +101,9 @@
         <option value="$PROJECT_DIR$/src/Rock.js" />
         <option value="$PROJECT_DIR$/src/Duck.js" />
         <option value="$PROJECT_DIR$/DuckHunt.html" />
-        <option value="$PROJECT_DIR$/src/entityManager.js" />
-        <option value="$PROJECT_DIR$/src/duck.js" />
         <option value="$PROJECT_DIR$/src/DuckHunt.js" />
+        <option value="$PROJECT_DIR$/src/duck.js" />
+        <option value="$PROJECT_DIR$/src/entityManager.js" />
       </list>
     </option>
   </component>
@@ -256,12 +256,12 @@
       <workItem from="1478538862549" duration="7559000" />
       <workItem from="1478876846430" duration="317000" />
       <workItem from="1478877337738" duration="4000" />
-      <workItem from="1478880110268" duration="114000" />
+      <workItem from="1478880110268" duration="363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7994000" />
+    <option name="totallyTimeSpent" value="8243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -456,26 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entityManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/duck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="65" column="2" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DuckHunt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -488,6 +468,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/duck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entityManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="204" column="38" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
