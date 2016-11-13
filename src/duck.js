@@ -46,8 +46,6 @@ Duck.prototype.cx = 200;
 Duck.prototype.cy = 200;
 Duck.prototype.velX = 0;
 Duck.prototype.velY = 0;
-Duck.prototype.launchVel = 2;
-Duck.prototype.numSubSteps = 1;
 Duck.prototype.flightTimer = 100;
 Duck.prototype.lives = 1;
 Duck.prototype.type = 'normal';
@@ -56,13 +54,10 @@ Duck.prototype.type = 'normal';
 //Duck.prototype.warpSound = new Audio("sounds/DuckWarp.ogg");
 
 Duck.prototype.spawn = function () {
-	var side = 1 - (Math.random()*Math.floor(0.5 + 1));
+    this.randType();
+    this.randomiseFlight();
 	this.cx = Math.random()*600;
 	this.cy = 600 + Math.random()* 50;
-	this.velY = Math.random() * -0.5 - 2;
-	this.velX = (-side*Math.random() - side)*2;
-    this.speed = 10;
-    this.type = this.randType();
 };
 
 Duck.prototype.randType = function (){
@@ -81,14 +76,6 @@ Duck.prototype.randType = function (){
     }else{
         this.type = 'normal';
     }
-}
-
-Duck.prototype.randomiseVelocity = function () {
-    var MIN_SPEED = 50,
-        MAX_SPEED = 200;
-
-    var speed = util.randRange(MIN_SPEED, MAX_SPEED) / SECS_TO_NOMINALS;
-    var dirn = Math.random() * consts.FULL_CIRCLE;
 };
 
     
@@ -136,19 +123,21 @@ Duck.prototype.getRadius = function () {
 
 Duck.prototype.takeBulletHit = function () {
     this.lives--;
+    console.log("take hit");
     if(this.lives === 0) {
+        console.log("die "+this.type);
         entityManager._ducksKilled++;
         this._isDeadNow = true;
         if(this.type === 'normal'){
-            entityManager._score += 1;
+            entityManager._score[0].addScore(1);
         }else if(this.type === 'speedy'){
-            entityManager._score += 2;
+            entityManager._score[0].addScore(2);
         }else if(this.type === 'heavy'){
-            entityManager._score += 5;
+            entityManager._score[0].addScore(5);
         }else if(this.type === 'speedySwitch'){
-            entityManager._score += 2;
+            entityManager._score[0].addScore(2);
         }else if(this.type === 'superPack'){
-            entityManager._score += 10;
+            entityManager._score[0].addScore(10);
         }
     }
 };
@@ -158,9 +147,6 @@ Duck.prototype.reset = function () {
     this.rotation = this.reset_rotation;
     
 };
-
-
-var NOMINAL_ROTATE_RATE = 0.1;
 
 
 Duck.prototype.render = function (ctx) {

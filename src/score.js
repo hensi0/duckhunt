@@ -32,6 +32,7 @@ var TEXT_OFFSET = -7
 var DIGITS_OFFSET = 20
 
 Score.prototype.addScore = function(diff){
+	console.log("add score");
 	this.score += diff;
 	if (this.score < 0) {
 		this.score = 0;
@@ -41,6 +42,7 @@ Score.prototype.addScore = function(diff){
 
 Score.prototype.update = function (du) {
     if (this.changed){
+		console.log("score change triggered");
 		var tempscore = this.score;
 		this.digits = "";
 		for (var i = NUM_DIGITS-1; i>=0; i--){

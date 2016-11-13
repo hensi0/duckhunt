@@ -54,7 +54,7 @@ _generateDucks : function() {
 
 _duckEscape : function() {
     this._playerLives--;
-    if(this.playerLives === 0) window.alert("Game over");
+
 },
 
 
@@ -204,7 +204,7 @@ update: function(du) {
         }
         if(this._playerLives === 0 && this._yolo === false){
             this._yolo = true;
-            window.alert("Game over \n Your score:"+" "+this._score);
+            window.alert("Game over \n Your score:"+" "+this._score[0].score);
             location.reload();
         }
     }
