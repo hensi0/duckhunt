@@ -158,6 +158,7 @@ function lockChangeAlert() {
   if (document.pointerLockElement === canvas ||
       document.mozPointerLockElement === canvas) {
     g_mouseLocked = true;
+	g_isUpdatePaused = false;
     document.addEventListener("mousemove", updatePosition, false);
   } else {
     g_mouseLocked = true;
