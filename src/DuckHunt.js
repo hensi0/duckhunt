@@ -188,7 +188,7 @@ function requestPreloads() {
 		SGshell : "res/images/SGshell.png",
 		Pshell  : "res/images/PistShell.png",
 		lives   : "res/images/lives.png",
-		BG   	: "res/images/BG.png",
+		BG   	: "res/images/pakkar.png",
 		scorebox: "res/images/scorebox.png",
 		lvlbox: "res/images/lvlbox.png",
 
@@ -206,6 +206,11 @@ function makeBirdAnimation(scale) {
     var bird = {};
 	//animation variables:  (image, y-startlocation, height, width, numberOfFrames, time between frames, scale)
     bird.animation = new Animation(g_images.BG,0,50,50,10,300, scale);
+	bird.normal = new Animation(g_images.BG,0,46,90,3,400, scale);
+	bird.speedy = new Animation(g_images.BG,90,46,90,3,400, scale);
+	bird.speedyswitch = new Animation(g_images.BG,180,46,90,3, 400, scale);
+	bird.superpack = new Animation(g_images.BG,360,92,90,3,400, scale);
+	bird.heavy = new Animation(g_images.BG,450,92,90,3,400, scale);
 	
     return bird;
 };

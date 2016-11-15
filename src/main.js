@@ -145,7 +145,7 @@ document.exitPointerLock = document.exitPointerLock ||
 
 canvas.onclick = function() {
   canvas.requestPointerLock();
-  entityManager._gun[0].shoot(g_mouseX2, g_mouseY2);
+  entityManager._gun[entityManager._selectedGun].shoot(g_mouseX2, g_mouseY2);
 };
 
 // pointer lock event listeners

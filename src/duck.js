@@ -17,16 +17,15 @@ function Duck(descr) {
 
     // Common inherited setup logic from Entity
     this.setup(descr);
+	
+	this.animations = makeBirdAnimation(this._scale);
+	
 	this.spawn();
     this.rememberResets();
     
     // Default sprite, if not otherwise specified
     this.sprite = this.sprite || g_sprites.rock;
-    
-	if(typeof makeBirdAnimation == 'function') {
-		this.animations = makeBirdAnimation(this._scale);
-		this.animation = this.animations['animation'];
-	}
+	
     // Set normal drawing scale, and warp state off
     this._scale = 1;
 };
@@ -55,9 +54,20 @@ Duck.prototype.type = 'normal';
 
 Duck.prototype.spawn = function () {
     this.randType();
+	this.configAnimation();
     this.randomiseFlight();
 	this.cx = Math.random()*600;
 	this.cy = 600 + Math.random()* 50;
+};
+
+Duck.prototype.configAnimation = function () {
+	
+    if(this.type === 'normal') this.animation = this.animations['normal'];
+	if(this.type === 'speedy') this.animation = this.animations['speedy'];
+	if(this.type === 'heavy') this.animation = this.animations['heavy'];
+	if(this.type === 'speedySwitch') this.animation = this.animations['speedyswitch'];
+	if(this.type === 'superPack') this.animation = this.animations['superpack'];
+	
 };
 
 Duck.prototype.randType = function (){
@@ -107,9 +117,9 @@ Duck.prototype.update = function (du) {
 };
 
 
-Duck.prototype.scanForHit = function (x,y) {
+Duck.prototype.scanForHit = function (x,y, dmg) {
     if(Math.abs(this.cx - x) <  this.getRadius() &&  Math.abs(this.cy - y) <  this.getRadius()){
-		this.takeBulletHit();
+		this.takeBulletHit(dmg);
 		return true;
 	} else return false;
 };
@@ -121,9 +131,8 @@ Duck.prototype.getRadius = function () {
     return (this.sprite.width)/2;
 };
 
-Duck.prototype.takeBulletHit = function () {
-    this.lives--;
-    console.log("take hit");
+Duck.prototype.takeBulletHit = function (dmg) {
+    this.lives -= dmg;
     if(this.lives === 0) {
         console.log("die "+this.type);
         entityManager._ducksKilled++;
@@ -151,6 +160,7 @@ Duck.prototype.reset = function () {
 
 Duck.prototype.render = function (ctx) {
     //sprite
+	/*
 	var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this._scale;
@@ -159,7 +169,7 @@ Duck.prototype.render = function (ctx) {
     );
     this.sprite.scale = origScale;
 	//animation
-	
+	*/
 	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
 };
 

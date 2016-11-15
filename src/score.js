@@ -33,7 +33,6 @@ var LEVEL_TEXT_OFFSET = -2;
 var LEVEL_NUM_OFFSET = 16;
 
 Score.prototype.addScore = function(diff){
-	console.log("add score");
 	this.score += diff;
 	if (this.score < 0) {
 		this.score = 0;

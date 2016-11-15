@@ -37,6 +37,7 @@ _score	 : [],
 
 _bShowRocks : true,
 _level : 1,
+_selectedGun : 0,
 _ducksKilled : 0,
 _spawnTimer : 0,
 _playerLives : 5,
@@ -114,7 +115,28 @@ deferredSetup : function () {
 init: function() {
 	console.log("init EM");
     this._generateDucks();
-	this._generateGun();
+	//pistol
+	this._generateGun(({
+			reloadTimer:25,
+			reloadTime:	25,
+			maxAmmo:	6,
+			ammoType:	'rounds',
+			ammo: 		0
+	}));
+	this._generateGun(({
+			reloadTimer:100,
+			reloadTime:	100,
+			maxAmmo:	25,
+			ammoType:	'rounds',
+			ammo: 		0
+	}));
+	this._generateGun(({
+			reloadTimer:80,
+			reloadTime:	80,
+			maxAmmo:	4,
+			ammoType:	'shells',
+			ammo: 		0
+	}));
 	this._score.push(new Score());
     //this._generateShip();
 },
@@ -150,7 +172,6 @@ generateParticle : function(x,y,angle,avgVel,maxAlpha,maxR,fillStyle, bool, bool
 },
 
 generateDuck : function(descr) {
-	console.log("generating duck")
     this._ducks.push(new Duck(descr));
 },
 
@@ -188,15 +209,20 @@ toggleRocks: function() {
     this._bShowRocks = !this._bShowRocks;
 },
 
-shootLocation: function(x,y) {
+shootLocation: function(x,y, dmg) {
     for( var i = 0 ; i < this._ducks.length ; i++){
-		if(this._ducks[i].scanForHit(x,y)) return;
+		if(this._ducks[i].scanForHit(x,y, dmg)) return;
 	}
 },
 
 duckEscape: function() {
    this._playerLives--;
 },
+
+select_pistol : '1'.charCodeAt(0),
+select_uzi : '2'.charCodeAt(0),
+select_shotgun : '3'.charCodeAt(0),
+reload : 'R'.charCodeAt(0),
 
 update: function(du) {
     for (var c = 0; c < this._categories.length; ++c) {
@@ -229,7 +255,12 @@ update: function(du) {
         }
     }
 	
-	this._gun[0].update();
+	if (eatKey(this.select_pistol)) this._selectedGun = 0;
+	if (eatKey(this.select_uzi)) this._selectedGun = 1;
+	if (eatKey(this.select_shotgun)) this._selectedGun = 2;
+	if (eatKey(this.reload)) this._gun[this._selectedGun].reload();
+	
+	this._gun[this._selectedGun].update();
     this._score[0].update();
 	
     if (this._ducks.length === 0||this._spawnTimer < 0)
@@ -271,7 +302,7 @@ render: function(ctx) {
 	g_sprites.BG1.drawCentredAt(
         ctx, 300, 300, 0
 	);
-	this._gun[0].render(ctx);
+	this._gun[this._selectedGun].render(ctx);
 	this._score[0].render(ctx);
 }
 

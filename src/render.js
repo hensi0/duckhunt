@@ -12,7 +12,7 @@ var TOGGLE_CLEAR = 'C'.charCodeAt(0);
 var TOGGLE_BOX = 'B'.charCodeAt(0);
 var TOGGLE_UNDO_BOX = 'U'.charCodeAt(0);
 var TOGGLE_FLIPFLOP = 'F'.charCodeAt(0);
-var TOGGLE_RENDER = 'R'.charCodeAt(0);
+var TOGGLE_RENDER = 'O'.charCodeAt(0);
 
 function render(ctx) {
     
