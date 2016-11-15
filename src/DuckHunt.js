@@ -187,6 +187,7 @@ function requestPreloads() {
 		cross   : "res/images/cross.png",
 		BG   	: "res/images/BG.png",
 		scorebox: "res/images/scorebox.png",
+		lvlbox: "res/images/lvlbox.png",
 
 
 		BG1   	: "res/images/BG1.png",
@@ -219,6 +220,7 @@ function preloadDone() {
 	g_sprites.BG  = new Sprite(g_images.BG);
 
 	g_sprites.scorebox  = new Sprite(g_images.scorebox);
+	g_sprites.lvlbox = new Sprite(g_images.lvlbox);
 
 
 	g_sprites.BG1  = new Sprite(g_images.BG1);

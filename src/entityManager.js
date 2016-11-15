@@ -212,7 +212,7 @@ update: function(du) {
                 // remove the dead guy, and shuffle the others down to
                 // prevent a confusing gap from appearing in the array
                 aCategory.splice(i,1);
-                if(this._ducksKilled === this.level * 10){
+                if(this._ducksKilled === this._level * 10){
                     this._level++;
                     this._playerLives++;
                 }
