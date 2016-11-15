@@ -57,7 +57,7 @@ Score.prototype.render = function (ctx) {
 	ctx, SCORE_X, SCORE_Y, this.rotation
     );
 	ctx.font = "bold 21px Comic Sans MS";
-	ctx.fillStyle = "red";
+	ctx.fillStyle = "#900";
 	ctx.textAlign = "center";
 	ctx.fillText("SCORE",SCORE_X,SCORE_Y+TEXT_OFFSET)
 	ctx.fillText(this.score,SCORE_X,SCORE_Y+DIGITS_OFFSET)
