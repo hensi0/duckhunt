@@ -148,12 +148,10 @@ canvas.onclick = function() {
   //entityManager._gun[entityManager._selectedGun].shoot(g_mouseX2, g_mouseY2);
 };
 function shootZeGun() {
-	console.log("shoot ze gunz");
   entityManager._gun[entityManager._selectedGun].shoot(g_mouseX2, g_mouseY2);
 };
 
 function stopZeShootin() {
-	console.log("stop ze uzi");
   entityManager._gun[entityManager._selectedGun].stopShooting();
 };
 

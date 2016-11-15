@@ -136,7 +136,9 @@ function requestPreloads() {
         ship   	: "https://notendur.hi.is/~pk/308G/images/ship.png",
         ship2  	: "https://notendur.hi.is/~pk/308G/images/ship_2.png",
         rock   	: "res/images/bird.png",
-		gun   	: "res/images/gun.png",
+		gun1   	: "res/images/Pist.png",
+		gun2   	: "res/images/UZI.png",
+		gun3   	: "res/images/SG.png",
 		cross   : "res/images/cross.png",
 		SGshell : "res/images/SGshell.png",
 		Pshell  : "res/images/PistShell.png",
@@ -177,7 +179,9 @@ function preloadDone() {
     g_sprites.ship  = new Sprite(g_images.ship);
     g_sprites.ship2 = new Sprite(g_images.ship2);
     g_sprites.rock  = new Sprite(g_images.rock);
-	g_sprites.gun  = new Sprite(g_images.gun);
+	g_sprites.gun1  = new Sprite(g_images.gun1);
+	g_sprites.gun2  = new Sprite(g_images.gun2);
+	g_sprites.gun3  = new Sprite(g_images.gun3);
 	g_sprites.cross  = new Sprite(g_images.cross);
 	g_sprites.lives  = new Sprite(g_images.lives);
 	g_sprites.nolives  = new Sprite(g_images.nolives);

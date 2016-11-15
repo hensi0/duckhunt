@@ -20,7 +20,9 @@ function Gun(descr) {
 
       
     // Default sprite and scale, if not otherwise specified
-    this.sprite = this.sprite || g_sprites.gun;
+    this.gun1 = this.gun1 || g_sprites.gun1;
+	this.gun2 = this.gun2 || g_sprites.gun2;
+	this.gun3 = this.gun3 || g_sprites.gun3;
 	this.spriteCross = this.spriteCross || g_sprites.cross;
 	this.spriteSGshell = this.spriteSGshell || g_sprites.SGshell;
 	this.spritePshell = this.spritePistolShell || g_sprites.Pshell;
@@ -35,6 +37,9 @@ function Gun(descr) {
 };
 
 Gun.prototype = new Entity();
+Gun.prototype.gun1;
+Gun.prototype.gun2;
+Gun.prototype.gun3;
 Gun.prototype.spriteCross;
 Gun.prototype.spriteSGshell;
 Gun.prototype.spritePshell;
@@ -159,9 +164,7 @@ Gun.prototype.drawCross = function (ctx, X, Y) {
 
 
 Gun.prototype.render = function (ctx) {
-	var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
-    this.sprite.scale = this.scale;
 	
 	var X;
 	var Y;
@@ -174,12 +177,33 @@ Gun.prototype.render = function (ctx) {
 	}
 	
 	this.drawCross(ctx, X, Y);
-	this.rotation = -Math.atan((600-Y)/X) + 110/180;
-	if(this.rotation < -1) this.rotation = -1;
-	if(this.rotation > 0.2) this.rotation = 0.2;
-	
-    this.sprite.drawCentredAt(
-        ctx, 120, 500, this.rotation
-    );
-
+	X -= 300
+	if(Y > 400){ Y = 0 ; X = 0;}
+	this.rotation = -Math.atan((600-Y)/X) ;
+	if(X >= 0) this.rotation += 1.65;
+	else this.rotation -= 1.65;
+	//if(this.rotation < -1) this.rotation = -1;
+	//if(this.rotation > 0.2) this.rotation = 0.2;
+	if(this.ammoType === 'rounds'){
+		this.gun1.drawCentredAt(
+			ctx, 300, 580, this.rotation
+		);
+	}else if(this.ammoType === 'uzirounds'){
+		if(X < 0 ){
+			this.gun2.scale = 1;
+			this.gun2.drawCentredAt(
+				ctx, 300, 580, this.rotation + 1
+			);
+		}
+		else{
+			this.gun2.scale = -1;
+			this.gun2.drawCentredAt(
+				ctx, 300, 580, this.rotation - Math.PI/2.3
+			);
+		}
+	}else {
+		this.gun3.drawCentredAt(
+			ctx, 300, 600, this.rotation
+		);
+	}
 };
