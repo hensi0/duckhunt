@@ -78,7 +78,7 @@ Duck.prototype.randType = function (){
         this.type = 'normal';
     }else if(typechooser<0.6 && lvl>5){
         this.type = 'speedy';
-    }else if(typechooser<0.7 && lvl>0){
+    }else if(typechooser<0.7 && lvl>5){
         this.type = 'heavy';
     }else if(typechooser<0.8 && lvl>5){
         this.type = 'speedySwitch';
