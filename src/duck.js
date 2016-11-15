@@ -22,7 +22,7 @@ function Duck(descr) {
 	
 	this.spawn();
     this.rememberResets();
-    
+
     // Default sprite, if not otherwise specified
     this.sprite = this.sprite || g_sprites.rock;
 	

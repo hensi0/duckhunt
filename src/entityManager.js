@@ -28,14 +28,10 @@ var entityManager = {
 // "PRIVATE" DATA
 _ducks   : [],
 _gun : [],
-_rocks   : [],
-_bullets : [],
-_ships   : [],
 _particles: [],
 _score	 : [],
 
 
-_bShowRocks : true,
 _level : 1,
 _selectedGun : 0,
 _ducksKilled : 0,
@@ -55,21 +51,10 @@ _generateDucks : function() {
     }
 },
 
-_duckEscape : function() {
-    this._playerLives--;
-
-},
-
 
 _generateGun : function(descr) {
     console.log("generating the gun")
     this._gun.push(new Gun(descr));
-},
-
-_forEachOf: function(aCategory, fn) {
-    for (var i = 0; i < aCategory.length; ++i) {
-        fn.call(aCategory[i]);
-    }
 },
 
 // PUBLIC METHODS
@@ -83,7 +68,7 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._particles];
+    this._categories = [this._ducks, this._particles];
 },
 
 init: function() {
@@ -218,9 +203,6 @@ render: function(ctx) {
 
         var aCategory = this._categories[c];
 
-        if (!this._bShowRocks && 
-            aCategory == this._rocks)
-            continue;
 
         for (var i = 0; i < aCategory.length; ++i) {
 

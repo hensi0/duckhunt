@@ -133,8 +133,6 @@ var g_images = {};
 function requestPreloads() {
 
     var requiredImages = {
-        ship   	: "https://notendur.hi.is/~pk/308G/images/ship.png",
-        ship2  	: "https://notendur.hi.is/~pk/308G/images/ship_2.png",
         rock   	: "res/images/bird.png",
 		gun1   	: "res/images/Pist.png",
 		gun2   	: "res/images/UZI.png",
@@ -176,8 +174,6 @@ var g_sprites = {};
 
 function preloadDone() {
 
-    g_sprites.ship  = new Sprite(g_images.ship);
-    g_sprites.ship2 = new Sprite(g_images.ship2);
     g_sprites.rock  = new Sprite(g_images.rock);
 	g_sprites.gun1  = new Sprite(g_images.gun1);
 	g_sprites.gun2  = new Sprite(g_images.gun2);
@@ -197,9 +193,6 @@ function preloadDone() {
 	g_sprites.BG2  = new Sprite(g_images.BG2);
 	g_sprites.BG3  = new Sprite(g_images.BG3);
 
-	
-    g_sprites.bullet = new Sprite(g_images.ship);
-    g_sprites.bullet.scale = 0.25;
 
     entityManager.init();
 
