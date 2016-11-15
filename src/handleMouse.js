@@ -29,8 +29,26 @@ function handleMouseDown(e){
         entityManager._gun[entityManager._selectedGun].reload();
     }
 }
+function handleScroll(e){
+	var currentgun = entityManager._selectedGun;
+	var numguns = 3;
+    if (e.wheelDelta > 0){
+		currentgun = currentgun + 1;
+		while (currentgun >= numguns){
+			currentgun -= numguns;
+		}
+	} else if ( e.wheelDelta < 0 ){
+		currentgun = currentgun - 1;
+		while (currentgun < 0){
+			currentgun += numguns;
+		}
+	}
+	entityManager._selectedGun = currentgun;
+    return false; 
+}
 
 // Handle "down" and "move" events the same way.
 
 window.addEventListener("mousedown", handleMouseDown);
 window.addEventListener("mousemove", handleMouse);
+window.addEventListener('mousewheel',handleScroll, false);
