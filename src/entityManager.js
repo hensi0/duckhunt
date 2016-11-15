@@ -48,7 +48,7 @@ _yolo: false,
 
 _generateDucks : function() {
     var i,
-        NUM_DUCKS = Math.round(Math.random()*3+(this._level/10));
+        NUM_DUCKS = Math.round(Math.random()*3+(this._level/2));
 
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
@@ -198,7 +198,7 @@ update: function(du) {
     if (this._ducks.length === 0||this._spawnTimer < 0)
     {
         this._generateDucks();
-        this._spawnTimer = 1000-this._level*this._level;
+        this._spawnTimer = 200-this._level*this._level;
     }
 
 },
