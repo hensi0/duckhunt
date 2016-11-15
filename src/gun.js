@@ -38,8 +38,10 @@ Gun.prototype.spriteCross;
 //shoots tho gun 
 Gun.prototype.shoot = function (x,y) {
     //console.log("boom boom á (x,y): (" + x + "," + y + ")");
-	if(y < 400)
+	if(y < 400){
 		entityManager.shootLocation(x,y);
+		entityManager.generateParticle(g_mouseX2, g_mouseY2, 0, 0, 0.7, 3, "#bcd9bc", true, false);
+	}
 };
 
 

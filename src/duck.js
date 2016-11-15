@@ -131,7 +131,7 @@ Duck.prototype.scanForHit = function (x,y) {
 
 
 Duck.prototype.getRadius = function () {
-    return (this.sprite.width)/2 * 0.8;
+    return (this.sprite.width)/2;
 };
 
 Duck.prototype.takeBulletHit = function () {

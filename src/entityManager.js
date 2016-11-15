@@ -31,6 +31,7 @@ _gun : [],
 _rocks   : [],
 _bullets : [],
 _ships   : [],
+_particles: [],
 
 _bShowRocks : true,
 _level : 1,
@@ -105,7 +106,7 @@ KILL_ME_NOW : -1,
 // i.e. thing which need `this` to be defined.
 //
 deferredSetup : function () {
-    this._categories = [this._rocks, this._bullets, this._ships, this._ducks];
+    this._categories = [this._rocks, this._bullets, this._ships, this._ducks, this._particles];
 },
 
 init: function() {
@@ -126,6 +127,24 @@ fireBullet: function(cx, cy, velX, velY, rotation) {
     }));
 },
 
+generateParticle : function(x,y,angle,avgVel,maxAlpha,maxR,fillStyle, bool, bool2){
+	if(bool2) var r = Math.random()*maxR;
+	else var r = maxR;
+	var vel = avgVel + (0.5*avgVel - Math.random()*avgVel); // +- 50% velocity from avgVel
+	var alpha = maxAlpha;
+	var particle = new Particle({
+		cx: x,
+		cy: y,
+		r: r,
+		angle: angle,
+		vel: vel,
+		style: fillStyle,
+		alpha: alpha,
+		fade: bool,
+		shrink: bool2
+	});
+    this._particles.push(particle);
+},
 
 generateDuck : function(descr) {
 	console.log("generating duck")

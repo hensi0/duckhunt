@@ -171,8 +171,8 @@ var g_mouseY2 = 0;
 function updatePosition(e) {
   var RADIUS = 20;
   
-  g_mouseX2 += e.movementX/2;
-  g_mouseY2 += e.movementY/2;
+  g_mouseX2 += e.movementX/2.2;
+  g_mouseY2 += e.movementY/2.2;
   
   if (g_mouseX2 > canvas.width + RADIUS) {
     g_mouseX2 = -RADIUS;
