@@ -31,6 +31,10 @@ var LEVEL_X = 562;
 var LEVEL_Y = 517;
 var LEVEL_TEXT_OFFSET = -2;
 var LEVEL_NUM_OFFSET = 16;
+//Constants for lives
+var LIVES_CENTER_X = 30;
+var LIVES_CENTER_Y = 540;
+var LIVES_SPACING = 20;
 
 Score.prototype.addScore = function(diff){
 	this.score += diff;
@@ -52,7 +56,7 @@ Score.prototype.render = function (ctx) {
 	ctx, SCORE_X, SCORE_Y, this.rotation
     );
 	ctx.font = "bold 21px Comic Sans MS";
-	ctx.fillStyle = "red";
+	ctx.fillStyle = "#900";
 	ctx.textAlign = "center";
 	ctx.fillText("SCORE",SCORE_X,SCORE_Y+TEXT_OFFSET)
 	ctx.fillText(this.score,SCORE_X,SCORE_Y+DIGITS_OFFSET)
@@ -63,5 +67,17 @@ Score.prototype.render = function (ctx) {
 	ctx.font = "bold 16px Comic Sans MS";
 	ctx.fillText("LVL",LEVEL_X,LEVEL_Y+LEVEL_TEXT_OFFSET)
 	ctx.fillText(entityManager._level,LEVEL_X,LEVEL_Y+LEVEL_NUM_OFFSET)
+	//LIVES
+	for (var i = 1; i<= 5; i++){
+		if (entityManager._playerLives < i){
+			g_sprites.nolives.drawWrappedCentredAt(
+			ctx, LIVES_CENTER_X, LIVES_CENTER_Y+(3-i)*LIVES_SPACING, this.rotation
+			);
+		} else {
+			g_sprites.lives.drawWrappedCentredAt(
+			ctx, LIVES_CENTER_X, LIVES_CENTER_Y+(3-i)*LIVES_SPACING, this.rotation
+			);
+		}
+	}
     this.sprite.scale = origScale;
 };

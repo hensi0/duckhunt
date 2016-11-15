@@ -107,8 +107,9 @@ Duck.prototype.update = function (du) {
 	this.cy += this.velY;
 
     this.flightTimer-=du;
+    console.log(this.flightTimer);
     if(this.flightTimer<0){
-        this.flightTimer = 1000+Math.random()*1000;
+        this.flightTimer = 50+Math.random()*200;
         this.randomiseFlight();
     }
 	
@@ -177,10 +178,10 @@ Duck.prototype.render = function (ctx) {
 Duck.prototype.randomiseFlight = function () {
     var side = 1 - (Math.floor(0.5 + Math.random())*2);
     if(this.type === 'speedy'){
-        this.velY = (Math.random() * -0.5 - 2)*1.5;
+        this.velY = (Math.random() * -0.5 - 1)*1.5;
         this.velX = (-side*Math.random() - side)*3;
     }else{
-        this.velY = Math.random() * -0.5 - 2;
+        this.velY = Math.random() * -0.5 - 1;
         this.velX = (-side*Math.random() - side)*2;
     }
 };
