@@ -170,7 +170,9 @@ update: function(du) {
                 aCategory.splice(i,1);
                 if(this._ducksKilled === this._level * 10){
                     this._level++;
-                    this._playerLives++;
+                    if(this._playerLives<5){
+                        this._playerLives++;
+                    }
                     this._ducksKilled = 0;
                 }
             }
