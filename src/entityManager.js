@@ -48,7 +48,7 @@ _yolo: false,
 
 _generateDucks : function() {
     var i,
-        NUM_DUCKS = Math.round(Math.random()*3+(this._level/2));
+        NUM_DUCKS = Math.round(Math.random()*3+(this._level/5));
 
     for (i = 0; i < NUM_DUCKS; ++i) {
         this.generateDuck();
