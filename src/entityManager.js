@@ -180,7 +180,6 @@ update: function(du) {
         if(this._playerLives === 0 && this._yolo === false){
             this._yolo = true;
             window.alert("Game over \n Your score:"+" "+this._score[0].score);
-            location.reload();
         }
     }
 	

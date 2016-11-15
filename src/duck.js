@@ -55,7 +55,6 @@ Duck.prototype.spawnSpawnsTimer = 100;
 
 Duck.prototype.spawn = function () {
     this.randType();
-    console.log("hello "+this.type);
 	this.configAnimation();
     this.randomiseFlight();
     this.setLives();
