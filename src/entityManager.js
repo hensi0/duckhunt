@@ -66,32 +66,6 @@ _generateGun : function(descr) {
     this._gun.push(new Gun(descr));
 },
 
-_findNearestShip : function(posX, posY) {
-    var closestShip = null,
-        closestIndex = -1,
-        closestSq = 1000 * 1000;
-
-    for (var i = 0; i < this._ships.length; ++i) {
-
-        var thisShip = this._ships[i];
-        var shipPos = thisShip.getPos();
-        var distSq = util.wrappedDistSq(
-            shipPos.posX, shipPos.posY, 
-            posX, posY,
-            g_canvas.width, g_canvas.height);
-
-        if (distSq < closestSq) {
-            closestShip = thisShip;
-            closestIndex = i;
-            closestSq = distSq;
-        }
-    }
-    return {
-        theShip : closestShip,
-        theIndex: closestIndex
-    };
-},
-
 _forEachOf: function(aCategory, fn) {
     for (var i = 0; i < aCategory.length; ++i) {
         fn.call(aCategory[i]);
@@ -138,18 +112,6 @@ init: function() {
 			ammo: 		0
 	}));
 	this._score.push(new Score());
-    //this._generateShip();
-},
-
-fireBullet: function(cx, cy, velX, velY, rotation) {
-    this._bullets.push(new Bullet({
-        cx   : cx,
-        cy   : cy,
-        velX : velX,
-        velY : velY,
-
-        rotation : rotation
-    }));
 },
 
 generateParticle : function(x,y,angle,avgVel,maxAlpha,maxR,fillStyle, bool, bool2){
@@ -175,39 +137,6 @@ generateDuck : function(descr) {
     this._ducks.push(new Duck(descr));
 },
 
-generateRock : function(descr) {
-    //this._ducks.push(new Duck(descr));
-},
-
-generateShip : function(descr) {
-    //this._ships.push(new Ship(descr));
-},
-
-killNearestShip : function(xPos, yPos) {
-    var theShip = this._findNearestShip(xPos, yPos).theShip;
-    if (theShip) {
-        theShip.kill();
-    }
-},
-
-yoinkNearestShip : function(xPos, yPos) {
-    var theShip = this._findNearestShip(xPos, yPos).theShip;
-    if (theShip) {
-        theShip.setPos(xPos, yPos);
-    }
-},
-
-resetShips: function() {
-    this._forEachOf(this._ships, Ship.prototype.reset);
-},
-
-haltShips: function() {
-    this._forEachOf(this._ships, Ship.prototype.halt);
-},	
-
-toggleRocks: function() {
-    this._bShowRocks = !this._bShowRocks;
-},
 
 shootLocation: function(x,y, dmg) {
     for( var i = 0 ; i < this._ducks.length ; i++){

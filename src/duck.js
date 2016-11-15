@@ -41,13 +41,14 @@ Duck.prototype.rememberResets = function () {
 
 // Initial, inheritable, default values
 Duck.prototype.rotation = 0;
-Duck.prototype.cx = 200;
-Duck.prototype.cy = 200;
+Duck.prototype.cx = Math.random()*600;
+Duck.prototype.cy = 600 + Math.random()* 50;
 Duck.prototype.velX = 0;
 Duck.prototype.velY = 0;
 Duck.prototype.flightTimer = 100;
 Duck.prototype.lives = 1;
 Duck.prototype.type = 'normal';
+Duck.prototype.spawnSpawnsTimer = 100;
 
 // HACKED-IN AUDIO (no preloading)
 //Duck.prototype.warpSound = new Audio("sounds/DuckWarp.ogg");
@@ -56,8 +57,8 @@ Duck.prototype.spawn = function () {
     this.randType();
 	this.configAnimation();
     this.randomiseFlight();
-	this.cx = Math.random()*600;
-	this.cy = 600 + Math.random()* 50;
+    this.setLives();
+    var maxhp = this.lives;
 };
 
 Duck.prototype.configAnimation = function () {
@@ -77,11 +78,11 @@ Duck.prototype.randType = function (){
         this.type = 'normal';
     }else if(typechooser<0.6 && lvl>5){
         this.type = 'speedy';
-    }else if(typechooser<0.7 && lvl>10){
+    }else if(typechooser<0.7 && lvl>5){
         this.type = 'heavy';
     }else if(typechooser<0.8 && lvl>5){
         this.type = 'speedySwitch';
-    }else if(typechooser<0.9 && lvl>15){
+    }else if(typechooser<0.9 && lvl>10){
         this.type = 'superPack';
     }else{
         this.type = 'normal';
@@ -107,7 +108,11 @@ Duck.prototype.update = function (du) {
 	this.cy += this.velY;
 
     this.flightTimer-=du;
-    console.log(this.flightTimer);
+    this.spawnSpawnsTimer-=du;
+    if(this.type === 'superPack' && this.spawnSpawnsTimer<0){
+        this.spawnSpawns();
+        this.spawnSpawnsTimer = 50+Math.random()*150;
+    }
     if(this.flightTimer<0){
         this.flightTimer = 50+Math.random()*200;
         this.randomiseFlight();
@@ -170,8 +175,19 @@ Duck.prototype.render = function (ctx) {
     );
     this.sprite.scale = origScale;
 	//animation
+<<<<<<< HEAD
 	*/
 	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
+};
+
+Duck.prototype.setLives = function() {
+    if(this.type === 'heavy'){
+        this.lives = 5;
+    }else if(this.type === 'superPack'){
+        this.lives = 5;
+    }else{
+        this.lives = 1;
+    }
 };
 
 
@@ -185,3 +201,7 @@ Duck.prototype.randomiseFlight = function () {
         this.velX = (-side*Math.random() - side)*2;
     }
 };
+
+Duck.prototype.spawnSpawns = function () {
+    entityManager.generateDuck({cx: this.cx, cy:this.cy+20});
+}
