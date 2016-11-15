@@ -24,6 +24,13 @@ function handleMouse(evt) {
     if (!button) return;
 }
 
+function handleMouseDown(e){
+    if(e.button === 2){
+        entityManager._gun[entityManager._selectedGun].reload();
+    }
+}
+
 // Handle "down" and "move" events the same way.
-window.addEventListener("mousedown", handleMouse);
+
+window.addEventListener("mousedown", handleMouseDown);
 window.addEventListener("mousemove", handleMouse);
