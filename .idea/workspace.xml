@@ -26,8 +26,8 @@
       <file leaf-file-name="duck.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/duck.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+            <state relative-caret-position="213">
+              <caret line="178" column="19" selection-start-line="178" selection-start-column="19" selection-end-line="178" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -35,13 +35,58 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gun.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gun.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="30" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1479226148434" expanded="true" signature="359:606" ph="{...}" />
+                <marker date="1479226148434" expanded="true" signature="3572:3792" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="render.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/render.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sprite.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprite.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="entityManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entityManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="113" column="12" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="12" />
+            <state relative-caret-position="564">
+              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -51,8 +96,12 @@
         <entry file="file://$PROJECT_DIR$/src/DuckHunt.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-878">
-              <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
-              <folding />
+              <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+              <folding>
+                <marker date="1479226148380" expanded="true" signature="2620:3016" ph="{...}" />
+                <marker date="1479226148380" expanded="true" signature="2648:3016" ph="{&quot;ship&quot;: &quot;https://notendur.hi.is/~pk/308G/images/ship.png&quot;...}" />
+                <marker date="1479226148380" expanded="true" signature="3893:3925" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,6 +122,7 @@
         <option value="$PROJECT_DIR$/src/handleMouse.js" />
         <option value="$PROJECT_DIR$/src/entityManager.js" />
         <option value="$PROJECT_DIR$/src/DuckHunt.js" />
+        <option value="$PROJECT_DIR$/src/gun.js" />
         <option value="$PROJECT_DIR$/src/duck.js" />
       </list>
     </option>
@@ -231,7 +281,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14070000" />
+    <option name="totallyTimeSpent" value="15347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -271,20 +321,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -301,7 +345,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -315,20 +358,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -345,7 +382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -359,20 +395,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -389,7 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -412,7 +441,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
           <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1479226148380" expanded="true" signature="2620:3016" ph="{...}" />
+            <marker date="1479226148380" expanded="true" signature="2648:3016" ph="{&quot;ship&quot;: &quot;https://notendur.hi.is/~pk/308G/images/ship.png&quot;...}" />
+            <marker date="1479226148380" expanded="true" signature="3893:3925" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -420,18 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gun.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1479216847179" expanded="true" signature="359:606" ph="{...}" />
-            <marker date="1479216847179" expanded="true" signature="2192:2412" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -445,14 +466,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/duck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2822">
@@ -469,6 +483,7 @@
           <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -483,20 +498,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -513,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -527,20 +535,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -557,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -571,20 +572,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -601,23 +596,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rock.js" />
     <entry file="file://$PROJECT_DIR$/src/Entity.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,21 +627,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sprite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-669">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="98" column="2" selection-start-line="98" selection-start-column="2" selection-end-line="98" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -698,25 +672,50 @@
     <entry file="file://$PROJECT_DIR$/src/DuckHunt.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-878">
-          <caret line="132" column="9" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
-          <folding />
+          <caret line="137" column="9" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
+          <folding>
+            <marker date="1479226148380" expanded="true" signature="2620:3016" ph="{...}" />
+            <marker date="1479226148380" expanded="true" signature="2648:3016" ph="{&quot;ship&quot;: &quot;https://notendur.hi.is/~pk/308G/images/ship.png&quot;...}" />
+            <marker date="1479226148380" expanded="true" signature="3893:3925" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entityManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="113" column="12" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="12" />
+        <state relative-caret-position="564">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148384" expanded="true" signature="5003:5048" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gun.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1479226148434" expanded="true" signature="359:606" ph="{...}" />
+            <marker date="1479226148434" expanded="true" signature="3572:3792" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/duck.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        <state relative-caret-position="213">
+          <caret line="178" column="19" selection-start-line="178" selection-start-column="19" selection-end-line="178" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

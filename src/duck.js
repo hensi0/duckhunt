@@ -55,10 +55,11 @@ Duck.prototype.spawnSpawnsTimer = 100;
 
 Duck.prototype.spawn = function () {
     this.randType();
+    console.log("hello "+this.type);
 	this.configAnimation();
     this.randomiseFlight();
     this.setLives();
-    var maxhp = this.lives;
+    this.maxhp = this.lives;
 };
 
 Duck.prototype.configAnimation = function () {
@@ -78,7 +79,7 @@ Duck.prototype.randType = function (){
         this.type = 'normal';
     }else if(typechooser<0.6 && lvl>5){
         this.type = 'speedy';
-    }else if(typechooser<0.7 && lvl>5){
+    }else if(typechooser<0.7 && lvl>0){
         this.type = 'heavy';
     }else if(typechooser<0.8 && lvl>5){
         this.type = 'speedySwitch';
@@ -163,6 +164,22 @@ Duck.prototype.reset = function () {
     
 };
 
+Duck.prototype.drawHealthBar = function (ctx, X, Y) {
+    ctx.beginPath();
+    ctx.moveTo(X-25, Y-30);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = "5";
+    ctx.lineTo(X+25, Y-30);
+    ctx.stroke();
+    ctx.beginPath();
+    var n = this.lives/this.maxhp;
+    ctx.moveTo(X-25, Y-30);
+    ctx.strokeStyle = "green";
+    ctx.lineWidth = "5";
+    ctx.lineTo(X-25+(50*n), Y-30);
+    ctx.stroke();
+}
+
 
 Duck.prototype.render = function (ctx) {
     //sprite
@@ -177,7 +194,8 @@ Duck.prototype.render = function (ctx) {
 	//animation
 <<<<<<< HEAD
 	*/
-	 this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
+    this.drawHealthBar(ctx, this.cx, this.cy-10);
+    this.animation.renderAt(ctx, this.cx, this.cy, this.rotation);
 };
 
 Duck.prototype.setLives = function() {
