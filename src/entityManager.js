@@ -100,8 +100,9 @@ init: function() {
 	this._generateGun(({
 			reloadTimer:100,
 			reloadTime:	100,
-			maxAmmo:	25,
-			ammoType:	'rounds',
+			maxAmmo:	20,
+			ammoType:	'uzirounds',
+			shootingTimer: 7,
 			ammo: 		0
 	}));
 	this._generateGun(({
@@ -188,8 +189,8 @@ update: function(du) {
 	if (eatKey(this.select_shotgun)) this._selectedGun = 2;
 	if (eatKey(this.reload)) this._gun[this._selectedGun].reload();
 	
-	this._gun[this._selectedGun].update();
-    this._score[0].update();
+	this._gun[this._selectedGun].update(du);
+    this._score[0].update(du);
 	
     if (this._ducks.length === 0||this._spawnTimer < 0)
     {

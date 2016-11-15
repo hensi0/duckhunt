@@ -145,7 +145,16 @@ document.exitPointerLock = document.exitPointerLock ||
 
 canvas.onclick = function() {
   canvas.requestPointerLock();
+  //entityManager._gun[entityManager._selectedGun].shoot(g_mouseX2, g_mouseY2);
+};
+function shootZeGun() {
+	console.log("shoot ze gunz");
   entityManager._gun[entityManager._selectedGun].shoot(g_mouseX2, g_mouseY2);
+};
+
+function stopZeShootin() {
+	console.log("stop ze uzi");
+  entityManager._gun[entityManager._selectedGun].stopShooting();
 };
 
 // pointer lock event listeners
@@ -153,6 +162,8 @@ canvas.onclick = function() {
 // Hook pointer lock state change events for different browsers
 document.addEventListener('pointerlockchange', lockChangeAlert, false);
 document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
+document.addEventListener('mousedown', shootZeGun, false);
+document.addEventListener('mouseup', stopZeShootin, false);
 
 function lockChangeAlert() {
   if (document.pointerLockElement === canvas ||
@@ -161,6 +172,7 @@ function lockChangeAlert() {
 	g_isUpdatePaused = false;
     document.addEventListener("mousemove", updatePosition, false);
   } else {
+	g_isUpdatePaused = true;
     g_mouseLocked = true;
     document.removeEventListener("mousemove", updatePosition, false);
   }

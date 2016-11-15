@@ -43,6 +43,8 @@ Gun.prototype.reloadTimer;
 Gun.prototype.maxAmmo;
 Gun.prototype.ammoType;
 Gun.prototype.ammo;
+Gun.prototype.shooting = false;
+Gun.prototype.shootingTimer;
 
 
 //shoots tho gun 
@@ -52,8 +54,11 @@ Gun.prototype.shoot = function (x,y) {
 		if(this.ammoType === 'rounds'){
 			this.shot(x,y, 1);
 			this.ammo--;
-		}
-		else if(this.ammoType === 'shells'){
+		} else if(this.ammoType === 'uzirounds'){
+			this.shooting = true;
+			this.shot(x,y, 1);
+			this.ammo--;
+		} else if(this.ammoType === 'shells'){
 			for(var i = 0; i < 15; i++){
 					var X = x + Math.random()*40 - 20;
 					var Y = y + Math.random()*40 - 20;
@@ -70,13 +75,23 @@ Gun.prototype.shot = function (x,y, dmg) {
 		entityManager.generateParticle(x, y, 0, 0, 0.7, 3, "#bcd9bc", true, false);
 };
 
+Gun.prototype.stopShooting = function () {
+		this.shooting = false;
+};
+
 Gun.prototype.update = function (du) {
 
     // TODO: YOUR STUFF HERE! --- Unregister and check for death
 	// spatialManager.unregister(this);
 	//this.cx = g_mouseX;//+this.sprite.width/2;
 	//this.cy = g_mouseY+this.sprite.height/2;
-    
+
+    if(this.shooting){
+		if(this.shootingTimer < 0){
+			this.shoot(g_mouseX2, g_mouseY2);
+			this.shootingTimer = 7;
+		} else this.shootingTimer -= du;
+	}		
 	if(this.ammo <= 0) this.reload(du);
 	
     // TODO: YOUR STUFF HERE! --- (Re-)Register
@@ -109,7 +124,7 @@ Gun.prototype.drawAmmo = function (ctx, X, Y) {
 		gradur += (Math.PI*2)/this.maxAmmo;
 		x = Math.cos(gradur)*25;
 		y = Math.sin(gradur)*25;
-		if(this.ammoType === 'rounds')
+		if(this.ammoType === 'rounds' || this.ammoType === 'uzirounds')
 			this.spritePshell.drawCentredAt(
 				ctx, X + x, Y - y, 0
 			);
