@@ -1,33 +1,4 @@
-// =========
-// ASTEROIDS
-// =========
-/*
 
-A sort-of-playable version of the classic arcade game.
-
-
-HOMEWORK INSTRUCTIONS:
-
-You have some "TODO"s to fill in again, particularly in:
-
-spatialManager.js
-
-But also, to a lesser extent, in:
-
-Rock.js
-Bullet.js
-Ship.js
-
-
-...Basically, you need to implement the core of the spatialManager,
-and modify the Rock/Bullet/Ship to register (and unregister)
-with it correctly, so that they can participate in collisions.
-
-Be sure to test the diagnostic rendering for the spatialManager,
-as toggled by the 'X' key. We rely on that for marking. My default
-implementation will work for the "obvious" approach, but you might
-need to tweak it if you do something "non-obvious" in yours.
-*/
 
 "use strict";
 
@@ -35,24 +6,6 @@ need to tweak it if you do something "non-obvious" in yours.
 
 var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
-
-/*
-0        1         2         3         4         5         6         7         8
-12345678901234567890123456789012345678901234567890123456789012345678901234567890
-*/
-
-
-// ====================
-// CREATE INITIAL SHIPS
-// ====================
-
-function createInitialShips() {
-
-    entityManager.generateShip({
-        cx : 200,
-        cy : 200
-    });
-}
 
 // =============
 // GATHER INPUTS
@@ -240,7 +193,6 @@ function preloadDone() {
     g_sprites.bullet.scale = 0.25;
 
     entityManager.init();
-    createInitialShips();
 
     main.init();
 }
