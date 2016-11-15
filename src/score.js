@@ -28,7 +28,7 @@ Score.prototype.changed = false;
 
 var NUM_DIGITS = 6;
 //Location of digits in Score Box
-var TEXT_OFFSET = -7
+var TEXT_OFFSET = -4
 var DIGITS_OFFSET = 20
 
 Score.prototype.addScore = function(diff){
@@ -41,6 +41,7 @@ Score.prototype.addScore = function(diff){
 }
 
 Score.prototype.update = function (du) {
+	/*
     if (this.changed){
 		console.log("score change triggered");
 		var tempscore = this.score;
@@ -51,6 +52,7 @@ Score.prototype.update = function (du) {
 		}
 		this.changed = false;
 	}
+	*/
 };
 
 Score.prototype.render = function (ctx) {
@@ -60,10 +62,10 @@ Score.prototype.render = function (ctx) {
     this.sprite.drawWrappedCentredAt(
 	ctx, this.cx, this.cy, this.rotation
     );
-	ctx.font = "bold 23px Comic Sans MS";
+	ctx.font = "bold 21px Comic Sans MS";
 	ctx.fillStyle = "red";
 	ctx.textAlign = "center";
 	ctx.fillText("SCORE",this.cx,this.cy+TEXT_OFFSET)
-	ctx.fillText(this.digits,this.cx,this.cy+DIGITS_OFFSET)
+	ctx.fillText(this.score,this.cx,this.cy+DIGITS_OFFSET)
     this.sprite.scale = origScale;
 };
