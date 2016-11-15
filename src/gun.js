@@ -22,6 +22,8 @@ function Gun(descr) {
     // Default sprite and scale, if not otherwise specified
     this.sprite = this.sprite || g_sprites.gun;
 	this.spriteCross = this.spriteCross || g_sprites.cross;
+	this.spriteSGshell = this.spriteSGshell || g_sprites.SGshell;
+	this.spritePshell = this.spritePistolShell || g_sprites.Pshell;
     this.scale  = this.scale  || 1;
 
 /*
@@ -34,6 +36,8 @@ function Gun(descr) {
 
 Gun.prototype = new Entity();
 Gun.prototype.spriteCross;
+Gun.prototype.spriteSGshell;
+Gun.prototype.spritePshell;
 
 //shoots tho gun 
 Gun.prototype.shoot = function (x,y) {
@@ -62,11 +66,27 @@ Gun.prototype.getRadius = function () {
     return 0;
 };
 
+Gun.prototype.drawCross = function (ctx, X, Y) {
+    
+	if(Y < 470){
+		this.spriteCross.drawCentredAt(
+			ctx, X, Y, 0
+		);
+		this.spritePshell.drawCentredAt(
+			ctx, X, Y, 0
+		);
+	} else
+		ctx.fillRect(
+			 X-5, Y-5, 10, 10
+		);
+};
+
 
 Gun.prototype.render = function (ctx) {
 	var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing
     this.sprite.scale = this.scale;
+	
 	var X;
 	var Y;
 	if(g_mouseLocked){
@@ -76,15 +96,8 @@ Gun.prototype.render = function (ctx) {
 		X = g_mouseX;
 		Y = g_mouseY;
 	}
-	if(Y < 470)
-		this.spriteCross.drawCentredAt(
-			ctx, X, Y, 0
-		);
-	else
-		ctx.fillRect(
-			 X-5, Y-5, 10, 10
-		);
-		
+	
+	this.drawCross(ctx, X, Y);
 	this.rotation = -Math.atan((600-Y)/X) + 110/180;
 	if(this.rotation < -1) this.rotation = -1;
 	if(this.rotation > 0.2) this.rotation = 0.2;

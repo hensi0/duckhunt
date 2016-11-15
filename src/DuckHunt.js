@@ -185,6 +185,9 @@ function requestPreloads() {
         rock   	: "res/images/bird.png",
 		gun   	: "res/images/gun.png",
 		cross   : "res/images/cross.png",
+		SGshell : "res/images/SGshell.png",
+		Pshell  : "res/images/PistShell.png",
+		lives   : "res/images/lives.png",
 		BG   	: "res/images/BG.png",
 		scorebox: "res/images/scorebox.png",
 		lvlbox: "res/images/lvlbox.png",
@@ -217,6 +220,9 @@ function preloadDone() {
     g_sprites.rock  = new Sprite(g_images.rock);
 	g_sprites.gun  = new Sprite(g_images.gun);
 	g_sprites.cross  = new Sprite(g_images.cross);
+	g_sprites.lives  = new Sprite(g_images.lives);
+	g_sprites.SGshell  = new Sprite(g_images.SGshell);
+	g_sprites.Pshell  = new Sprite(g_images.Pshell);
 	g_sprites.BG  = new Sprite(g_images.BG);
 
 	g_sprites.scorebox  = new Sprite(g_images.scorebox);
