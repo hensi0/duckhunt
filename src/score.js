@@ -22,10 +22,9 @@ Score.prototype = new Entity();
 Score.prototype.score = 0;
 
 //Constants for Score Box
-var SCORE_X = 540
-var SCORE_Y = 570
-var TEXT_OFFSET = -4
-var DIGITS_OFFSET = 20
+var SCORE_Y = 570;
+var TEXT_OFFSET = -4;
+var DIGITS_OFFSET = 20;
 //Constants for Level Box
 var LEVEL_X = 562;
 var LEVEL_Y = 517;
