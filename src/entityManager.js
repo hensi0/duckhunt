@@ -32,13 +32,15 @@ _rocks   : [],
 _bullets : [],
 _ships   : [],
 _particles: [],
+_score	 : [],
+
 
 _bShowRocks : true,
 _level : 1,
 _ducksKilled : 0,
 _spawnTimer : 0,
 _playerLives : 5,
-_score: 0,
+_yolo: false,
 
 // "PRIVATE" METHODS
 
@@ -54,7 +56,7 @@ _generateDucks : function() {
 
 _duckEscape : function() {
     this._playerLives--;
-    if(this.playerLives === 0) window.alert("Game over");
+
 },
 
 
@@ -113,6 +115,7 @@ init: function() {
 	console.log("init EM");
     this._generateDucks();
 	this._generateGun();
+	this._score.push(new Score());
     //this._generateShip();
 },
 
@@ -209,7 +212,6 @@ update: function(du) {
                 // remove the dead guy, and shuffle the others down to
                 // prevent a confusing gap from appearing in the array
                 aCategory.splice(i,1);
-                this._ducksKilled++;
                 if(this._ducksKilled === this.level * 10){
                     this._level++;
                     this._playerLives++;
@@ -220,14 +222,16 @@ update: function(du) {
             }
 
         }
-        if(this._playerLives === 0){
-            window.alert("Game over \n Your score:"+" "+this._score);
+        if(this._playerLives === 0 && this._yolo === false){
+            this._yolo = true;
+            window.alert("Game over \n Your score:"+" "+this._score[0].score);
             location.reload();
         }
     }
 	
 	this._gun[0].update();
-    
+    this._score[0].update();
+	
     if (this._ducks.length === 0||this._spawnTimer < 0)
     {
         this._generateDucks();
@@ -267,8 +271,8 @@ render: function(ctx) {
 	g_sprites.BG1.drawCentredAt(
         ctx, 300, 300, 0
 	);
-	
 	this._gun[0].render(ctx);
+	this._score[0].render(ctx);
 }
 
 }
