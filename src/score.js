@@ -47,6 +47,11 @@ Score.prototype.update = function (du) {
 	
 };
 
+
+Score.prototype.reset = function () {
+	this.score = 0;
+};
+
 Score.prototype.render = function (ctx) {
     var origScale = this.sprite.scale;
     // pass my scale into the sprite, for drawing

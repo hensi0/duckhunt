@@ -130,6 +130,15 @@ shootLocation: function(x,y, dmg) {
 	}
 },
 
+
+reset: function(x,y, dmg) {
+    this._playerLives = 5;
+	this._score = 0;
+	this._level = 1;
+	this._score = [];
+	this._score.push(new Score());
+ },
+
 duckEscape: function() {
    this._playerLives--;
 },
@@ -168,7 +177,8 @@ update: function(du) {
         }
         if(this._playerLives === 0 && this._yolo === false){
             this._yolo = true;
-            window.alert("Game over \n Your score:"+" "+this._score[0].score);
+            window.alert("Game over \n Your score: "+this._score[0].score + " \n click the game to try again" );
+			this.reset();
         }
     }
 	

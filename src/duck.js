@@ -140,7 +140,6 @@ Duck.prototype.getRadius = function () {
 Duck.prototype.takeBulletHit = function (dmg) {
     this.lives -= dmg;
     if(this.lives === 0) {
-        console.log("die "+this.type);
         entityManager._ducksKilled++;
         this._isDeadNow = true;
         if(this.type === 'normal'){

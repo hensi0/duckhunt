@@ -1,0 +1,48 @@
+* {margin: 0; padding: 0;}
+
+body {
+	background-color: #207A26;
+}
+
+#myCanvas {
+	display: block;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 60px;
+}
+	
+.names {
+	font-size: 1.4em;
+	font-weight: 600;
+	text-align: center;
+}
+
+.container {
+	min-width: 800px;
+	width: %;
+	height: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #309C37;
+	}
+
+.container iframe {
+	margin-top:50px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.info {
+	color: #fffffa;
+	margin-top: 70px;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info ul {
+	list-style: none;
+}
